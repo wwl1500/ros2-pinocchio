@@ -1,0 +1,32 @@
+[0.009s] Invoking command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wwl/ros2_ws/build/pinocchio_ros2_example -- -j8 -l8
+[0.131s] [ 50%] [32mBuilding CXX object CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o[0m
+[14.586s] In file included from [01m[K/opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hpp:58[m[K,
+[14.586s]                  from [01m[K/home/wwl/ros2_ws/src/pinocchio_ros2_example/src/pinocchio_node.cpp:7[m[K:
+[14.586s] [01m[K/opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hxx:[m[K In function ‘[01m[Kconst typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::MatrixXs& pinocchio::[01;32m[Kcrba[m[K(const ModelTpl<_Scalar, _Options, JointCollectionTpl>&, DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, Convention) [35m[K[with Scalar = double; int Options = 0; JointCollectionTpl = JointCollectionDefaultTpl; ConfigVectorType = Eigen::Matrix<double, -1, 1>][m[K[m[K’:
+[14.586s] [01m[K/opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hxx:327:3:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[14.586s]   327 |   [01;35m[K}[m[K
+[14.586s]       |   [01;35m[K^[m[K
+[26.963s] [100%] [32m[1mLinking CXX executable pinocchio_node[0m
+[27.817s] [100%] Built target pinocchio_node
+[27.827s] Invoked command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wwl/ros2_ws/build/pinocchio_ros2_example -- -j8 -l8
+[27.836s] Invoking command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/wwl/ros2_ws/build/pinocchio_ros2_example
+[27.843s] -- Install configuration: ""
+[27.844s] -- Installing: /home/wwl/ros2_ws/install/pinocchio_ros2_example/lib/pinocchio_ros2_example/pinocchio_node
+[27.860s] -- Set non-toolchain portion of runtime path of "/home/wwl/ros2_ws/install/pinocchio_ros2_example/lib/pinocchio_ros2_example/pinocchio_node" to ""
+[27.861s] -- Installing: /home/wwl/ros2_ws/install/pinocchio_ros2_example/lib/pinocchio_ros2_example/pinocchio_python_node.py
+[27.861s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/ament_index/resource_index/package_run_dependencies/pinocchio_ros2_example
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/ament_index/resource_index/parent_prefix_path/pinocchio_ros2_example
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/environment/ament_prefix_path.sh
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/environment/ament_prefix_path.dsv
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/environment/path.sh
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/environment/path.dsv
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/local_setup.bash
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/local_setup.sh
+[27.862s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/local_setup.zsh
+[27.863s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/local_setup.dsv
+[27.863s] -- Installing: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/package.dsv
+[27.863s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/ament_index/resource_index/packages/pinocchio_ros2_example
+[27.863s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/cmake/pinocchio_ros2_exampleConfig.cmake
+[27.863s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/cmake/pinocchio_ros2_exampleConfig-version.cmake
+[27.863s] -- Up-to-date: /home/wwl/ros2_ws/install/pinocchio_ros2_example/share/pinocchio_ros2_example/package.xml
+[27.865s] Invoked command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/wwl/ros2_ws/build/pinocchio_ros2_example

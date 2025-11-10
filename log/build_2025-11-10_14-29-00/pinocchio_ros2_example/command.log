@@ -1,0 +1,2 @@
+Invoking command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wwl/ros2_ws/build/pinocchio_ros2_example -- -j8 -l8
+Invoked command in '/home/wwl/ros2_ws/build/pinocchio_ros2_example' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wwl/ros2_ws/build/pinocchio_ros2_example -- -j8 -l8

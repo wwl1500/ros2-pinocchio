@@ -1,0 +1,12 @@
+# colcon build artifacts
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor/OS metadata
+.DS_Store
+Thumbs.db

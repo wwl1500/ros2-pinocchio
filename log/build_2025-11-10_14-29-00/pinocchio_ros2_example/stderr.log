@@ -1,0 +1,7 @@
+/home/wwl/ros2_ws/src/pinocchio_ros2_example/src/pinocchio_node.cpp:8:10: fatal error: pinocchio/algorithm/non-linear-effects.hpp: 没有那个文件或目录
+    8 | #include <pinocchio/algorithm/non-linear-effects.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/pinocchio_node.dir/build.make:76：CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/pinocchio_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2
