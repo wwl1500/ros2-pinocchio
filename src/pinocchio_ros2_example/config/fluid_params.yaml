@@ -1,0 +1,66 @@
+# ============================================================================
+# 流体动力学参数配置文件
+# ============================================================================
+# 参考文献：
+#   IEEE 6907522: "Modeling of underwater snake robots"
+#   https://ieeexplore.ieee.org/document/6907522
+# ============================================================================
+# 参数说明：
+#   m_u, m_v: 附加质量系数 (kg) - 沿 u/v 方向的附加质量，对应文献中的 μ_n, μ_t
+#   m_r: 附加质量转动惯量 (kg·m²) - 绕 z 轴的附加转动惯量，对应文献中的 λ_1
+#   d_lu, d_lv, d_lr: 线性阻尼系数 (N·s/m 或 N·m·s/rad)，对应文献中的 c_t, c_n
+#   d_nu, d_nv, d_nr: 非线性阻尼系数 (N·s²/m² 或 N·m·s²/rad²)，对应文献中的二次项
+#   v_current_world: 世界系洋流速度 [vx, vy, vz] (m/s)
+#   rho: 流体密度 (kg/m³)，淡水约 1000，海水约 1025
+# ============================================================================
+
+fluid_dynamics_node:
+  ros__parameters:
+    # 基本参数
+    urdf_path: "/home/wwl/ros2-pinocchio/install/pinocchio_ros2_example/share/pinocchio_ros2_example/models/two_link.urdf"
+    free_flyer: false
+    fluid_frames: ["link_1", "link_2"]
+
+    # 流场（世界系）- 参考 IEEE 6907522 中的环境建模
+    v_current_world: [0.03, 0.0, 0.0]  # 洋流速度 (m/s)
+    rho: 1000.0  # 流体密度 (kg/m³)，淡水标准值
+
+    # 通用几何/阻力系数（可选，用于二次阻力项）
+    default_area: 0.01  # 参考面积 (m²)
+    default_cd_quad: 0.0  # 二次阻力系数
+    default_cd_lin: 0.0  # 线性阻力系数
+    default_cd_ang_lin: 0.1  # 角速度线性阻尼系数
+
+    # link_1 参数 - 参考 IEEE 6907522 中的实验/仿真参数
+    # 附加质量（Added Mass）- 文献中的 μ_n, μ_t 等
+    link_1.m_u: 0.089  # 沿 u 方向附加质量 (kg)
+    link_1.m_v: 0.089  # 沿 v 方向附加质量 (kg)
+    link_1.m_r: 0.16   # 绕 z 轴附加转动惯量 (kg·m²)
+    
+    # 线性阻尼（Linear Damping）- 文献中的 c_t, c_n
+    link_1.d_lu: 0.4   # u 方向线性阻尼 (N·s/m)
+    link_1.d_lv: 3.0   # v 方向线性阻尼 (N·s/m)
+    link_1.d_lr: 0.0   # 旋转线性阻尼 (N·m·s/rad)
+    
+    # 非线性阻尼（Nonlinear Damping）- 文献中的二次项
+    link_1.d_nu: 12.9  # u 方向非线性阻尼 (N·s²/m²)
+    link_1.d_nv: 21.3  # v 方向非线性阻尼 (N·s²/m²)
+    link_1.d_nr: 0.0   # 旋转非线性阻尼 (N·m·s²/rad²)
+
+    # link_2 参数（如无特殊，可与 link_1 相同）
+    # 附加质量
+    link_2.m_u: 0.089
+    link_2.m_v: 0.089
+    link_2.m_r: 0.16
+    
+    # 线性阻尼
+    link_2.d_lu: 0.4
+    link_2.d_lv: 3.0
+    link_2.d_lr: 0.0
+    
+    # 非线性阻尼
+    link_2.d_nu: 12.9
+    link_2.d_nv: 21.3
+    link_2.d_nr: 0.0
+
+
