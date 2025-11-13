@@ -1,6 +1,0 @@
-In file included from /opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hpp:58,
-                 from /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/src/pinocchio_node.cpp:7:
-/opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hxx: In function ‘const typename pinocchio::DataTpl<_Scalar, _Options, JointCollectionTpl>::MatrixXs& pinocchio::crba(const ModelTpl<_Scalar, _Options, JointCollectionTpl>&, DataTpl<S1, O1, JointCollectionTpl>&, const Eigen::MatrixBase<Matrix3Like>&, Convention) [with Scalar = double; int Options = 0; JointCollectionTpl = JointCollectionDefaultTpl; ConfigVectorType = Eigen::Matrix<double, -1, 1>]’:
-/opt/openrobots/lib/pkgconfig/../../include/pinocchio/algorithm/crba.hxx:327:3: warning: control reaches end of non-void function [-Wreturn-type]
-  327 |   }
-      |   ^
