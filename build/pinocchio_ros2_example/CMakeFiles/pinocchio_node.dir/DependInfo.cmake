@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/wwl/ros2_ws/src/pinocchio_ros2_example/src/pinocchio_node.cpp" "CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o" "gcc" "CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o.d"
+  "/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/src/pinocchio_node.cpp" "CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o" "gcc" "CMakeFiles/pinocchio_node.dir/src/pinocchio_node.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

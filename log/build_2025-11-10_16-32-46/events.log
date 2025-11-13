@@ -1,0 +1,100 @@
+[0.000000] (-) TimerEvent: {}
+[0.000077] (pinocchio_ros2_example) JobQueued: {'identifier': 'pinocchio_ros2_example', 'dependencies': OrderedDict()}
+[0.000333] (pinocchio_ros2_example) JobStarted: {'identifier': 'pinocchio_ros2_example'}
+[0.005766] (pinocchio_ros2_example) JobProgress: {'identifier': 'pinocchio_ros2_example', 'progress': 'cmake'}
+[0.006358] (pinocchio_ros2_example) Command: {'cmd': ['/usr/bin/cmake', '/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/wwl/ros2-pinocchio/install/pinocchio_ros2_example'], 'cwd': '/home/wwl/ros2-pinocchio/build/pinocchio_ros2_example', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/wwl', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'wwl', 'VSCODE_NLS_CONFIG': '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/cursor/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/tcf.json","messagesFile":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/b9e5948c1ad20443a5cecba6b84a3c9b99d62580/nls.messages.json","corruptMarkerFile":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"6fe284ae87274d9cb2cdffc89b193492.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/tcf.json","_cacheRoot":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn","_resolvedLanguagePackCoreLocation":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/b9e5948c1ad20443a5cecba6b84a3c9b99d62580","_corruptedFile":"/home/wwl/.config/Cursor/clp/6fe284ae87274d9cb2cdffc89b193492.zh-cn/corrupted.info"}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/openrobots/lib:/opt/openrobots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/wwl', 'CHROME_DESKTOP': 'cursor.desktop', 'OLDPWD': '/home/wwl/ros2-pinocchio', 'DESKTOP_SESSION': 'ubuntu', 'MODELSCOPE_API_KEY': 'ms-b6c1f81e-4bb2-4f29-99a3-8fc2b1c21599', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-09cf815b-1.7.-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/cursor.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SDL_IM_MODULE': 'fcitx', 'MANAGERPID': '1989', 'SYSTEMD_EXEC_PID': '2289', 'IM_CONFIG_CHECK_ENV': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'CODEX_TOKEN': 'user:87969/7d48a59ba95f4fbbb9930444a8ad2200', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4596', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'VSCODE_L10N_BUNDLE_LOCATION': 'file:///home/wwl/.cursor/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.99.0-universal/translations/extensions/vscode.json-language-features.i18n.json', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'fcitx', 'LOGNAME': 'wwl', 'FORCE_COLOR': '0', 'JOURNAL_STREAM': '9:20894', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/opt/openrobots/lib/pkgconfig:/opt/openrobots/lib/pkgconfig:', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'wwl', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'COMPOSER_NO_INTERACTION': '1', 'PATH': '/opt/openrobots/bin:/home/wwl/local/bin:/opt/openrobots/bin:/home/wwl/local/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/wwl-MACHD-WXX9:@/tmp/.ICE-unix/2242,unix/wwl-MACHD-WXX9:/tmp/.ICE-unix/2242', 'INVOCATION_ID': '32d5cecf50484de6be684f71f5b10c74', 'XDG_MENU_PREFIX': 'gnome-', 'VSCODE_PROCESS_TITLE': 'extension-host  [1-5]', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'CURSOR_AGENT': '1', 'DISPLAY': ':0', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'XMODIFIERS': '@im=fcitx', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.7FH3F3', 'LS_COLORS': '', 'SBX_CHROME_API_RQ': '1', 'CURSOR_TRACE_ID': 'f31f4e273260456ebbc030f04a6d4693', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'CODEX_URL': 'https://cmd.micosoft.icu/', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'fcitx', 'PWD': '/home/wwl/ros2-pinocchio/build/pinocchio_ros2_example', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'VSCODE_CODE_CACHE_PATH': '/home/wwl/.config/Cursor/CachedData/b9e5948c1ad20443a5cecba6b84a3c9b99d62580', 'PICO_SDK_PATH': '/home/wwl/pico-sdk', 'CLUTTER_IM_MODULE': 'xim', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/openrobots/lib/python3.12/site-packages:/opt/openrobots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/openrobots:/opt/openrobots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '4596'}), 'shell': False}
+[0.098049] (pinocchio_ros2_example) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.099867] (-) TimerEvent: {}
+[0.153485] (pinocchio_ros2_example) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.170780] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199969] (-) TimerEvent: {}
+[0.252980] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.265942] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.266335] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.267104] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.276405] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.300080] (-) TimerEvent: {}
+[0.372606] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.383310] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.383577] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.384184] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.388480] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.400188] (-) TimerEvent: {}
+[0.500383] (-) TimerEvent: {}
+[0.530355] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.600511] (-) TimerEvent: {}
+[0.625830] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.662582] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.680538] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.700625] (-) TimerEvent: {}
+[0.702026] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.727280] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.797665] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.799814] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.800690] (-) TimerEvent: {}
+[0.863146] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[0.879878] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[0.900147] (pinocchio_ros2_example) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.900762] (-) TimerEvent: {}
+[0.962524] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.977052] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") \n'}
+[0.977790] (pinocchio_ros2_example) StdoutLine: {'line': b"-- Checking for module 'pinocchio'\n"}
+[0.989097] (pinocchio_ros2_example) StdoutLine: {'line': b'--   Found pinocchio, version 3.4.0\n'}
+[1.000883] (-) TimerEvent: {}
+[1.019515] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Pinocchio include dirs: /opt/openrobots/lib/pkgconfig/../../include;/usr/include/eigen3;/usr/lib/x86_64-linux-gnu/pkgconfig/../../../include/urdfdom;/usr/include;/opt/openrobots/include\n'}
+[1.019684] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Pinocchio libraries: pinocchio_default;pinocchio_parsers;pinocchio_casadi;boost_filesystem;boost_serialization;boost_system;urdfdom_sensor;urdfdom_model_state;urdfdom_model;urdfdom_world;casadi\n'}
+[1.021931] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.086158] (pinocchio_ros2_example) StderrLine: {'line': b"Error parsing '/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml':\n"}
+[1.100981] (-) TimerEvent: {}
+[1.201151] (-) TimerEvent: {}
+[1.301319] (-) TimerEvent: {}
+[1.401471] (-) TimerEvent: {}
+[1.501633] (-) TimerEvent: {}
+[1.601794] (-) TimerEvent: {}
+[1.701980] (-) TimerEvent: {}
+[1.802203] (-) TimerEvent: {}
+[1.902350] (-) TimerEvent: {}
+[2.002523] (-) TimerEvent: {}
+[2.102692] (-) TimerEvent: {}
+[2.202892] (-) TimerEvent: {}
+[2.303094] (-) TimerEvent: {}
+[2.403285] (-) TimerEvent: {}
+[2.503482] (-) TimerEvent: {}
+[2.603658] (-) TimerEvent: {}
+[2.703848] (-) TimerEvent: {}
+[2.804019] (-) TimerEvent: {}
+[2.904226] (-) TimerEvent: {}
+[3.004432] (-) TimerEvent: {}
+[3.104625] (-) TimerEvent: {}
+[3.204795] (-) TimerEvent: {}
+[3.291125] (pinocchio_ros2_example) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[3.291289] (pinocchio_ros2_example) StderrLine: {'line': b'  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>\n'}
+[3.291468] (pinocchio_ros2_example) StderrLine: {'line': b'    main()\n'}
+[3.291562] (pinocchio_ros2_example) StderrLine: {'line': b'  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main\n'}
+[3.291662] (pinocchio_ros2_example) StderrLine: {'line': b'    raise e\n'}
+[3.291759] (pinocchio_ros2_example) StderrLine: {'line': b'  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main\n'}
+[3.291850] (pinocchio_ros2_example) StderrLine: {'line': b'    package = parse_package_string(\n'}
+[3.291936] (pinocchio_ros2_example) StderrLine: {'line': b'              ^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.292032] (pinocchio_ros2_example) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 786, in parse_package_string\n'}
+[3.292120] (pinocchio_ros2_example) StderrLine: {'line': b"    raise InvalidPackage('Error(s):%s' % (''.join(['\\n- %s' % e for e in errors])), filename)\n"}
+[3.292208] (pinocchio_ros2_example) StderrLine: {'line': b"catkin_pkg.package.InvalidPackage: Error(s) in package '/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml':\n"}
+[3.292297] (pinocchio_ros2_example) StderrLine: {'line': b'Error(s):\n'}
+[3.292385] (pinocchio_ros2_example) StderrLine: {'line': b"- The generic dependency on 'std_msgs' is redundant with: exec_depend\n"}
+[3.292481] (pinocchio_ros2_example) StderrLine: {'line': b"- The generic dependency on 'sensor_msgs' is redundant with: exec_depend\n"}
+[3.304906] (-) TimerEvent: {}
+[3.330749] (pinocchio_ros2_example) StderrLine: {'line': b'CMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):\n'}
+[3.331015] (pinocchio_ros2_example) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[3.331134] (pinocchio_ros2_example) StderrLine: {'line': b'  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py\n'}
+[3.331230] (pinocchio_ros2_example) StderrLine: {'line': b'  /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml\n'}
+[3.331295] (pinocchio_ros2_example) StderrLine: {'line': b'  /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/ament_cmake_core/package.cmake)\n'}
+[3.331371] (pinocchio_ros2_example) StderrLine: {'line': b'  returned error code 1\n'}
+[3.331471] (pinocchio_ros2_example) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.331565] (pinocchio_ros2_example) StderrLine: {'line': b'  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)\n'}
+[3.331655] (pinocchio_ros2_example) StderrLine: {'line': b'  /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)\n'}
+[3.331752] (pinocchio_ros2_example) StderrLine: {'line': b'  CMakeLists.txt:90 (ament_lint_auto_find_test_dependencies)\n'}
+[3.331846] (pinocchio_ros2_example) StderrLine: {'line': b'\n'}
+[3.331946] (pinocchio_ros2_example) StderrLine: {'line': b'\n'}
+[3.332054] (pinocchio_ros2_example) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[3.338926] (pinocchio_ros2_example) CommandEnded: {'returncode': 1}
+[3.339585] (pinocchio_ros2_example) JobEnded: {'identifier': 'pinocchio_ros2_example', 'rc': 1}
+[3.349830] (-) EventReactorShutdown: {}

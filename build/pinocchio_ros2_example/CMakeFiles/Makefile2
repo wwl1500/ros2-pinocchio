@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wwl/ros2_ws/src/pinocchio_ros2_example
+CMAKE_SOURCE_DIR = /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wwl/ros2_ws/build/pinocchio_ros2_example
+CMAKE_BINARY_DIR = /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/pinocchio_node.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/pinocchio_ros2_example_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/pinocchio_ros2_example_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pinocchio_ros2_example_uninstall.dir/build.make CMakeFiles/pinocchio_ros2_example_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pinocchio_ros2_example_uninstall.dir/build.make CMakeFiles/pinocchio_ros2_example_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles --progress-num= "Built target pinocchio_ros2_example_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles --progress-num= "Built target pinocchio_ros2_example_uninstall"
 .PHONY : CMakeFiles/pinocchio_ros2_example_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pinocchio_ros2_example_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pinocchio_ros2_example_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 0
 .PHONY : CMakeFiles/pinocchio_ros2_example_uninstall.dir/rule
 
 # Convenience name for target.
@@ -135,14 +135,14 @@ CMakeFiles/pinocchio_ros2_example_uninstall.dir/clean:
 CMakeFiles/pinocchio_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pinocchio_node.dir/build.make CMakeFiles/pinocchio_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pinocchio_node.dir/build.make CMakeFiles/pinocchio_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles --progress-num=1,2 "Built target pinocchio_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles --progress-num=1,2 "Built target pinocchio_node"
 .PHONY : CMakeFiles/pinocchio_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pinocchio_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pinocchio_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles 0
 .PHONY : CMakeFiles/pinocchio_node.dir/rule
 
 # Convenience name for target.

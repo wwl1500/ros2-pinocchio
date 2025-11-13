@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wwl/ros2_ws/src/pinocchio_ros2_example
+CMAKE_SOURCE_DIR = /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wwl/ros2_ws/build/pinocchio_ros2_example
+CMAKE_BINARY_DIR = /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/wwl/ros2_ws/build/pinocchio_ros2_example && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wwl/ros2_ws/src/pinocchio_ros2_example /home/wwl/ros2_ws/src/pinocchio_ros2_example /home/wwl/ros2_ws/build/pinocchio_ros2_example /home/wwl/ros2_ws/build/pinocchio_ros2_example /home/wwl/ros2_ws/build/pinocchio_ros2_example/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

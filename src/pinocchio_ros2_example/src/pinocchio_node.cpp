@@ -5,6 +5,7 @@
 #include <pinocchio/algorithm/compute-all-terms.hpp>
 #include <pinocchio/algorithm/rnea.hpp>
 #include <pinocchio/algorithm/crba.hpp>
+#include <pinocchio/parsers/urdf.hpp>
 #include <pinocchio/fwd.hpp>
 #include <Eigen/Dense>
 #include <memory>
@@ -22,13 +23,24 @@ class PinocchioNode : public rclcpp::Node
 public:
   PinocchioNode() : Node("pinocchio_node")
   {
-    // 创建一个简单的 Pinocchio 模型
-    // 在实际使用中，你可以加载 URDF 文件
-    // pinocchio::urdf::buildModel("path/to/robot.urdf", model);
-    
-    // 初始化模型和数据
-    // 注意：这里使用空模型作为示例，实际使用时需要加载真实的机器人模型
+    // 参数：URDF 路径与是否使用自由基座
+    std::string urdf_path = this->declare_parameter<std::string>("urdf_path", "");
+    bool free_flyer = this->declare_parameter<bool>("free_flyer", false);
+
+    // 初始化模型：优先尝试加载 URDF
     model_ = std::make_shared<pinocchio::Model>();
+    if (!urdf_path.empty())
+    {
+      try {
+        if (free_flyer) {
+          pinocchio::urdf::buildModel(urdf_path, pinocchio::JointModelFreeFlyer(), *model_);
+        } else {
+          pinocchio::urdf::buildModel(urdf_path, *model_);
+        }
+      } catch (const std::exception &e) {
+        RCLCPP_WARN(this->get_logger(), "加载URDF失败: %s", e.what());
+      }
+    }
     data_ = std::make_shared<pinocchio::Data>(*model_);
     
     RCLCPP_INFO(this->get_logger(), "Pinocchio Node 启动成功");
@@ -153,12 +165,15 @@ private:
 
   void timer_callback()
   {
+    // 只执行一次并停止计时器
     auto message = std_msgs::msg::String();
     message.data = "Pinocchio 正在运行 - 版本: " + std::string(PINOCCHIO_VERSION);
     publisher_->publish(message);
-    
-    // 演示动力学计算
-    compute_dynamics_example();
+
+    compute_dynamics_example();  // 单次输出
+    if (timer_) {
+      timer_->cancel();
+    }
   }
   
   rclcpp::TimerBase::SharedPtr timer_;

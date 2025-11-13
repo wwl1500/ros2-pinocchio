@@ -1,8 +1,8 @@
 # Pinocchio ROS2 综合指南
 
-本仓库展示如何在仅安装了 ROS 2 的 Ubuntu 系统上，额外部署 Pinocchio 并在 ROS 2 包中调用其动力学算法。本文档整合了原先分散的快速开始、使用指南与动力学说明，建议从头到尾跟随完成。
+本仓库展示如何在仅安装了 ROS 2 的 Ubuntu 系统上，额外部署 Pinocchio 并在 ROS 2 包中调用其动力学算法。
 
-> 约定环境：Ubuntu 24.04 + ROS 2 Jazzy。若你使用其他发行版或 ROS 版本，请将命令中的 `jazzy` 替换为实际值。
+> 约定环境：Ubuntu 24.04 + ROS 2 Jazzy。
 
 ## 目录
 1. [适用场景与前置检查](#适用场景与前置检查)
@@ -19,13 +19,6 @@
 8. [更多资源](#更多资源)
 
 ---
-
-## 适用场景与前置检查
-
-- 你已经完成 ROS 2 官方安装，并能在终端执行 `ros2 --version` 获得正确输出。
-- 你拥有 `sudo` 权限。
-- 若此前未安装 Pinocchio，可按照下文“一次性准备步骤”操作；若已安装，请直接跳到 [ROS 2 工作空间配置](#ros-2-工作空间配置)。
-
 快速自检命令：
 ```bash
 ros2 --version
@@ -124,21 +117,21 @@ source install/setup.bash
 
 运行节点与话题：
 ```bash
-# 终端 1：C++ 节点
+# C++ 节点
 ros2 run pinocchio_ros2_example pinocchio_node
 
-# 终端 2：Python 节点（可选）
+# C++ 流体动力节点（实时外力发布 tau_ext_cpp）
+ros2 run pinocchio_ros2_example fluid_dynamics_cpp_node --ros-args \
+  -p urdf_path:=/home/wwl/ros2-pinocchio/install/pinocchio_ros2_example/share/pinocchio_ros2_example/models/two_link.urdf
+
+# Python 示例节点
 ros2 run pinocchio_ros2_example pinocchio_python_node.py
 
-# 终端 3：话题监听
-ros2 topic echo /pinocchio_info
-```
+# Python 流体动力外力节点（参考 111.tex）
+ros2 launch pinocchio_ros2_example fluid_dynamics.launch.py
 
-预期输出示例：
-```
-[INFO] [pinocchio_node]: Pinocchio Node 启动成功
-[INFO] [pinocchio_node]: Pinocchio 版本: 3.4.0
-...
+# C++ 流体动力外力节点（参考 111.tex，性能更高）
+ros2 launch pinocchio_ros2_example fluid_dynamics_cpp.launch.py
 ```
 
 ---
@@ -201,6 +194,101 @@ Eigen::VectorXd compute_fluid_forces(const Eigen::VectorXd &q, const Eigen::Vect
 
 ---
 
+## 基于 IEEE 6907522 的流体动力节点
+
+文件 `scripts/fluid_dynamics_node.py`（Python 版本）、`src/fluid_dynamics_cpp/fluid_dynamics_cpp_node.cpp`（C++ 版本）以及对应的 launch 文件 `launch/fluid_dynamics.launch.py` 和 `launch/fluid_dynamics_cpp.launch.py` 实现了 IEEE 6907522 文献 ["Modeling of underwater snake robots"](https://ieeexplore.ieee.org/document/6907522) 中描述的流体动力学模型：
+
+**参考文献：**
+- IEEE 6907522: "Modeling of underwater snake robots"
+- 理论推导参考：`/home/wwl/My_Note/水下蛇形机器人动力学推导详述/水下蛇形机器人动力学推导详述.tex`
+
+**实现的流体动力学模型：**
+- **附加质量（Added Mass）**：对应文献中的 μ_n, μ_t, λ_1
+- **线性阻尼（Linear Damping）**：对应文献中的 c_t, c_n
+- **非线性阻尼（Nonlinear Damping）**：对应文献中的二次阻力项
+- **未知洋流扰动**：以参数形式进入，可置零
+
+**核心做法：** 将上述模型在各受力帧上计算出的空间力矩注入到 Pinocchio 的 `tau_ext` 中，使用 `pinocchio.rnea(model, data, q, dq, ddq, fext)` 得到流体外力贡献。实现公式：`M(q)q̈ + C(q, q̇)q̇ + g(q) = τ + τ_ext`
+
+### 快速运行
+
+#### Python 版本
+```bash
+# 1. 编译并加载环境
+colcon build --packages-select pinocchio_ros2_example
+source install/setup.bash
+
+# 2. 启动 Python 流体动力节点（默认加载示例 two_link.urdf）
+ros2 launch pinocchio_ros2_example fluid_dynamics.launch.py
+```
+
+#### C++ 版本
+```bash
+# 1. 编译并加载环境（确保已编译 C++ 节点）
+colcon build --packages-select pinocchio_ros2_example
+source install/setup.bash
+
+# 2. 启动 C++ 流体动力节点（默认加载示例 two_link.urdf）
+ros2 launch pinocchio_ros2_example fluid_dynamics_cpp.launch.py
+```
+
+两个版本功能相同，C++ 版本性能更高，适合实时控制场景。
+
+### 主要参数（可在 launch 文件中覆盖）
+- `urdf_path`：机器人 URDF 路径，默认 `share/pinocchio_ros2_example/models/two_link.urdf`
+- `fluid_frames`：受流体作用的帧列表（默认 `['link_1', 'link_2']`）
+- `free_flyer`：是否启用自由基座
+- `v_current_world`：世界系洋流速度矢量
+- 帧级参数（通过 `ros2 param set` 或 YAML 传入）：`<frame>.m_u / m_v / m_r`、`<frame>.d_lu / d_lv / d_lr`、`<frame>.d_nu / d_nv / d_nr`
+
+节点会在话题 `tau_ext`（Python 版本）或 `tau_ext_cpp`（C++ 版本）发布广义流体力矩，可与控制器输出叠加后发送到执行器或用于仿真。
+
+### 带外力公式验证（在线/离线）
+
+节点内部和独立验证脚本均支持对公式进行数值验证：
+
+- 验证公式：`M(q) q̈ + C(q, q̇) q̇ + g(q) = τ_with − τ_ext`
+- 期望残差：约 `1e-8`（双精度数值误差量级内）
+
+#### 在线（节点内置一次性验证）
+```bash
+source /home/wwl/ros2-pinocchio/install/setup.bash
+ros2 launch pinocchio_ros2_example fluid_dynamics.launch.py start_sine_pub:=true
+# 首次收到 /joint_states 后，会在终端打印：
+# 验证 公式: ||M*qdd + C*v + g - (tau - tau_ext)|| = 0.000e+00
+```
+
+#### 离线（独立验证脚本，持续验证）
+1) 启动产生外力的节点（Python 版示例）  
+```bash
+source /home/wwl/ros2-pinocchio/install/setup.bash
+ros2 launch pinocchio_ros2_example fluid_dynamics.launch.py start_sine_pub:=true
+```
+2) 另开终端运行验证器（订阅 `/tau_ext`，也可改为 `/tau_ext_cpp`）  
+```bash
+source /home/wwl/ros2-pinocchio/install/setup.bash
+ros2 run pinocchio_ros2_example fluid_dynamics_verifier.py \
+  --ros-args \
+  -p urdf_path:=/home/wwl/ros2-pinocchio/install/pinocchio_ros2_example/share/pinocchio_ros2_example/models/two_link.urdf \
+  -p fluid_frames:="['link_1','link_2']" \
+  -p rho:=1000.0 \
+  -p tau_topic:=/tau_ext
+```
+3) 可选：过滤查看验证日志  
+```bash
+source /home/wwl/ros2-pinocchio/install/setup.bash
+ros2 topic echo /rosout | grep --line-buffered fluid_dynamics_verifier
+```
+输出示例：
+```
+核对结果: ||tau_ext_calc|| = 5.0e+01, ||residual|| = 0.0e+00, 与话题差值范数 = 1.2e+02
+```
+- `||residual|| ≈ 0`：公式成立  
+- `||tau_ext_calc||`：按当前流体模型重建的外力矩范数  
+- `与话题差值范数`：与实际话题外力的差异（用于交叉校核）
+
+---
+
 ## 日常使用速查
 
 常用命令（假设环境变量已写入 `~/.bashrc`）：
@@ -222,23 +310,8 @@ pkg-config --modversion pinocchio
 python3 -c "import pinocchio; print(pinocchio.__version__)"
 ```
 
----
 
-## 常见问题与排查
-
-| 问题描述 | 解决思路 |
-| --- | --- |
-| `pkg-config` 找不到 `pinocchio` | 确认已安装 `robotpkg-pinocchio`，并执行 `source ~/.bashrc` 让环境变量生效。 |
-| 编译时报找不到 `/usr/include/eigen3` | 安装 `libeigen3-dev`，并确保 CMake 中加入该目录。 |
-| 运行时报缺少 `libpinocchio.so` | 确认 `LD_LIBRARY_PATH` 中包含 `/opt/openrobots/lib`。 |
-| Python `import pinocchio` 失败 | 安装 `robotpkg-pinocchio-python` 并检查 `PYTHONPATH`。 |
-| 使用 `colcon build` 报 ROS 依赖未找到 | 确保在当前终端已执行 `source /opt/ros/jazzy/setup.bash`。 |
-
-调试建议：查看 `build/` 与 `log/latest_build` 中的详细日志，或运行 `colcon build --event-handlers console_direct+` 获取实时输出。
-
----
-
-## 更多资源
+## 参考资料
 - Pinocchio 官方文档：https://stack-of-tasks.github.io/pinocchio/
 - Pinocchio GitHub：https://github.com/stack-of-tasks/pinocchio
 - ROS 2 文档：https://docs.ros.org/

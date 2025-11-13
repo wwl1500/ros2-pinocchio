@@ -1,0 +1,27 @@
+Error parsing '/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml':
+Traceback (most recent call last):
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+    main()
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+    raise e
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+    package = parse_package_string(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 786, in parse_package_string
+    raise InvalidPackage('Error(s):%s' % (''.join(['\n- %s' % e for e in errors])), filename)
+catkin_pkg.package.InvalidPackage: Error(s) in package '/home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml':
+Error(s):
+- The generic dependency on 'std_msgs' is redundant with: exec_depend
+- The generic dependency on 'sensor_msgs' is redundant with: exec_depend
+CMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+  execute_process(/usr/bin/python3
+  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+  /home/wwl/ros2-pinocchio/src/pinocchio_ros2_example/package.xml
+  /home/wwl/ros2-pinocchio/build/pinocchio_ros2_example/ament_cmake_core/package.cmake)
+  returned error code 1
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+  /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+  CMakeLists.txt:90 (ament_lint_auto_find_test_dependencies)
+
+
